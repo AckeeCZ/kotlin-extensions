@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AckeeExtensions.iml" filepath="$PROJECT_DIR$/AckeeExtensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidextensions/androidextensions.iml" filepath="$PROJECT_DIR$/androidextensions/androidextensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/picassoextensions/picassoextensions.iml" filepath="$PROJECT_DIR$/picassoextensions/picassoextensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerviewextensions/recyclerviewextensions.iml" filepath="$PROJECT_DIR$/recyclerviewextensions/recyclerviewextensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxextensions/rxextensions.iml" filepath="$PROJECT_DIR$/rxextensions/rxextensions.iml" />
+    </modules>
+  </component>
+</project>
