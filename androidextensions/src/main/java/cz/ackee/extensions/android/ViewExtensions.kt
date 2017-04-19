@@ -1,6 +1,8 @@
 package cz.ackee.extensions.android
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.support.annotation.*
@@ -10,6 +12,7 @@ import android.util.TypedValue
 import android.view.View
 import android.view.View.GONE
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 
 /**
  * Extensions for [View] class
@@ -70,3 +73,60 @@ fun View.attrDimen(attr: Int): Int {
 fun View.attrDrawable(attr: Int): Drawable {
     return context.attrDrawable(attr)
 }
+
+
+/**
+ * Get bitmap representation of view
+ */
+fun View.asBitmap(): Bitmap {
+    val b = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
+    val c = Canvas(b)
+    layout(left, top, right, bottom)
+    draw(c)
+    return b
+}
+
+
+
+/**
+ * View artificial attribute that sets compound left drawable
+ */
+var TextView.drawableLeft: Int
+    get() = throw IllegalAccessException("Property drawableLeft only as setter")
+    set(value) {
+        val drawables = compoundDrawables
+        setCompoundDrawablesWithIntrinsicBounds(context.drawable(value), drawables[1], drawables[2], drawables[3])
+    }
+
+
+/**
+ * View artificial attribute that sets compound right drawable
+ */
+var TextView.drawableRight: Int
+    get() = throw IllegalAccessException("Property drawableRight only as setter")
+    set(value) {
+        val drawables = compoundDrawables
+        setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], context.drawable(value), drawables[3])
+    }
+
+
+/**
+ * View artificial attribute that sets compound top drawable
+ */
+var TextView.drawableTop: Int
+    get() = throw IllegalAccessException("Property drawableTop only as setter")
+    set(value) {
+        val drawables = compoundDrawables
+        setCompoundDrawablesWithIntrinsicBounds(drawables[0], context.drawable(value), drawables[2], drawables[3])
+    }
+
+
+/**
+ * View artificial attribute that sets compound bottom drawable
+ */
+var TextView.drawableBottom: Int
+    get() = throw IllegalAccessException("Property drawableBottom only as setter")
+    set(value) {
+        val drawables = compoundDrawables
+        setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], drawables[2], context.drawable(value))
+    }
