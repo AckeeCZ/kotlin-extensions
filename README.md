@@ -1,9 +1,9 @@
 # Android Kotlin Extensions
 
 ## Purpose of library
-This library serves as collection of various kotlin extensions that simplifies developers life. All projects had extensions and in most cases extensions done the same but had different syntax etc. This project unifies this.
+This library serves as collection of various kotlin extensions that simplifies developers life. All Kotlin projects had its own extensions and in most cases they done the same but had different syntax etc. This project tries to unify that problem with clear separation of extensions based on its dependencies.
 
-All collections are collected from projects that are bases on Kotlin/Anko
+All extensions are collected from projects that are bases on Kotlin/Anko
 
 ## Structure
 Extensions are grouped to submodules that has the same dependency. So for example if extensions has dependency to RxJava they are in separate module.
