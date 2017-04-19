@@ -26,3 +26,5 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
+
+apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
