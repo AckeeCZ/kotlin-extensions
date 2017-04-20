@@ -11,6 +11,7 @@ import android.support.v4.content.ContextCompat
 import android.util.TypedValue
 import android.view.View
 import android.view.View.GONE
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 
@@ -87,7 +88,6 @@ fun View.asBitmap(): Bitmap {
 }
 
 
-
 /**
  * View artificial attribute that sets compound left drawable
  */
@@ -130,3 +130,11 @@ var TextView.drawableBottom: Int
         val drawables = compoundDrawables
         setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], drawables[2], context.drawable(value))
     }
+
+
+/**
+ * Inflate [layout] into this ViewGroup
+ */
+fun ViewGroup.inflate(@LayoutRes layout: Int, attachToParent: Boolean = true) {
+    return context.inflate(layout, this, attachToParent)
+}
