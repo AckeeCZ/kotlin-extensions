@@ -6,7 +6,9 @@ import android.support.v7.widget.AppCompatCheckBox
 import android.support.v7.widget.AppCompatEditText
 import android.support.v7.widget.AppCompatRadioButton
 import android.support.v7.widget.AppCompatSeekBar
+import android.view.ViewGroup
 import android.view.ViewManager
+import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.custom.ankoView
 
 /**
@@ -61,4 +63,9 @@ inline fun ViewManager.bottomNavigation() = bottomNavigation {}
 inline fun ViewManager.bottomNavigation(theme: Int = 0, init: BottomNavigationView.() -> Unit) = ankoView(::BottomNavigationView, theme, init)
 
 
+/**
+ * Get Anko context from view group
+ */
+val ViewGroup.ankoContext
+    get() = AnkoContext.Companion.create(context, this)
 
