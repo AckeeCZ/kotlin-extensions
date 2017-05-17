@@ -95,11 +95,12 @@ fun Context.screenHeight(): Int {
 
 /**
  * Get status bar height
+ * @param restrictToLollipop indicator if status bar height resource should be lookup only on versions higher than Lollipop
  */
-fun Context.statusBarHeight(): Int {
+fun Context.statusBarHeight(restrictToLollipop: Boolean = true): Int {
     var result = 0
     val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
-    if (resourceId > 0 && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+    if (resourceId > 0 && (!restrictToLollipop || (restrictToLollipop && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP))) {
         result = dimen(resourceId)
     }
     return result

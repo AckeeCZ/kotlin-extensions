@@ -5,3 +5,6 @@
 
 ## 0.1.2
 - Add `ViewGroup.inflate` method to Android Extensions
+
+## 0.1.3
+- Add optinal attribute to Context.statusbarHeight for restricting size resolving to Lollipop and higher
