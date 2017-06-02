@@ -1,6 +1,9 @@
 package cz.ackee.extensions.rx
 
+import io.reactivex.Completable
+import io.reactivex.Maybe
 import io.reactivex.Observable
+import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -25,6 +28,54 @@ fun <T> Observable<T>.subscribeOnNewThread(): Observable<T> {
 }
 
 fun <T> Observable<T>.subscribeOnComputation(): Observable<T> {
+    return this.subscribeOn(Schedulers.computation())
+}
+
+fun Completable.observeOnMainThread(): Completable {
+    return this.observeOn(AndroidSchedulers.mainThread())
+}
+
+fun Completable.subscribeOnIO(): Completable {
+    return this.subscribeOn(Schedulers.io())
+}
+
+fun Completable.subscribeOnNewThread(): Completable {
+    return this.subscribeOn(Schedulers.newThread())
+}
+
+fun Completable.subscribeOnComputation(): Completable {
+    return this.subscribeOn(Schedulers.computation())
+}
+
+fun <T> Maybe<T>.observeOnMainThread(): Maybe<T> {
+    return this.observeOn(AndroidSchedulers.mainThread())
+}
+
+fun <T> Maybe<T>.subscribeOnIO(): Maybe<T> {
+    return this.subscribeOn(Schedulers.io())
+}
+
+fun <T> Maybe<T>.subscribeOnNewThread(): Maybe<T> {
+    return this.subscribeOn(Schedulers.newThread())
+}
+
+fun <T> Maybe<T>.subscribeOnComputation(): Maybe<T> {
+    return this.subscribeOn(Schedulers.computation())
+}
+
+fun <T> Single<T>.observeOnMainThread(): Single<T> {
+    return this.observeOn(AndroidSchedulers.mainThread())
+}
+
+fun <T> Single<T>.subscribeOnIO(): Single<T> {
+    return this.subscribeOn(Schedulers.io())
+}
+
+fun <T> Single<T>.subscribeOnNewThread(): Single<T> {
+    return this.subscribeOn(Schedulers.newThread())
+}
+
+fun <T> Single<T>.subscribeOnComputation(): Single<T> {
     return this.subscribeOn(Schedulers.computation())
 }
 
