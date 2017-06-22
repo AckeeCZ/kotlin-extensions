@@ -2,16 +2,16 @@ package cz.ackee.extensions.android
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Point
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.support.annotation.*
 import android.support.annotation.IntRange
 import android.support.v4.content.ContextCompat
 import android.util.TypedValue
-import android.R.attr.y
-import android.R.attr.x
-import android.graphics.Point
-import android.os.Build
-import android.view.*
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.view.WindowManager
 
 
 /**
@@ -32,10 +32,6 @@ fun Context.drawable(@DrawableRes res: Int): Drawable {
 
 fun Context.string(@StringRes res: Int): String {
     return getString(res)
-}
-
-fun Context.dimen(@DimenRes res: Int): Int {
-    return resources.getDimensionPixelSize(res)
 }
 
 /**
@@ -101,7 +97,7 @@ fun Context.statusBarHeight(restrictToLollipop: Boolean = true): Int {
     var result = 0
     val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
     if (resourceId > 0 && (!restrictToLollipop || (restrictToLollipop && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP))) {
-        result = dimen(resourceId)
+        result = resources.getDimensionPixelSize(resourceId)
     }
     return result
 }

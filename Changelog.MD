@@ -11,3 +11,6 @@
 
 ## 0.1.4
 - Add subscribeOn*/observeOnMainThread extensnions for Completable, Maybe and Single
+
+## 0.1.5
+- Remove dimen() extension on context/view

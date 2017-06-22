@@ -3,12 +3,9 @@ package cz.ackee.extensions.android
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.support.annotation.*
 import android.support.annotation.IntRange
-import android.support.v4.content.ContextCompat
-import android.util.TypedValue
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
@@ -46,10 +43,6 @@ fun View.drawable(@DrawableRes res: Int): Drawable {
 
 fun View.string(@StringRes res: Int): String {
     return context.string(res)
-}
-
-fun View.dimen(@DimenRes res: Int): Int {
-    return context.dimen(res)
 }
 
 /**
