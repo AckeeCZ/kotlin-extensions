@@ -1,6 +1,7 @@
 package cz.ackee.extensions.android
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
@@ -41,6 +42,10 @@ fun View.drawable(@DrawableRes res: Int): Drawable {
     return context.drawable(res)
 }
 
+fun View.tintedDrawable(@DrawableRes drawableId: Int, @ColorRes colorId: Int): Drawable {
+    return context.tintedDrawable(drawableId, colorId)
+}
+
 fun View.string(@StringRes res: Int): String {
     return context.string(res)
 }
@@ -53,6 +58,12 @@ fun View.colorWithAlpha(@ColorRes res: Int, @IntRange(from = 0, to = 100) alphaP
     return context.colorWithAlpha(res, alphaPercent)
 }
 
+/**
+ * Get color state list from resources
+ */
+fun View.colors(@ColorRes stateListRes: Int): ColorStateList? {
+    return context.colors(stateListRes)
+}
 
 /**
  * Get dimension defined by attribute [attr]
