@@ -1,6 +1,7 @@
 package cz.ackee.extensions.android
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Point
 import android.graphics.drawable.Drawable
@@ -8,6 +9,7 @@ import android.os.Build
 import android.support.annotation.*
 import android.support.annotation.IntRange
 import android.support.v4.content.ContextCompat
+import android.support.v4.graphics.drawable.DrawableCompat
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -30,6 +32,14 @@ fun Context.drawable(@DrawableRes res: Int): Drawable {
     return ContextCompat.getDrawable(this, res)
 }
 
+fun Context.tintedDrawable(@DrawableRes drawableId: Int, @ColorRes colorId: Int): Drawable {
+    val tint: Int = ContextCompat.getColor(this, colorId)
+    val drawable: Drawable = ContextCompat.getDrawable(this, drawableId)
+    drawable.mutate()
+    DrawableCompat.setTint(drawable, tint)
+    return drawable
+}
+
 fun Context.string(@StringRes res: Int): String {
     return getString(res)
 }
@@ -43,6 +53,9 @@ fun Context.colorWithAlpha(@ColorRes res: Int, @IntRange(from = 0, to = 100) alp
     return Color.argb((alphaPercent / 100f * 255).toInt(), Color.red(color), Color.green(color), Color.blue(color))
 }
 
+fun Context.colors(@ColorRes stateListRes: Int): ColorStateList? {
+    return ContextCompat.getColorStateList(this, stateListRes)
+}
 
 internal fun Context.attribute(value: Int): TypedValue {
     var ret = TypedValue()
