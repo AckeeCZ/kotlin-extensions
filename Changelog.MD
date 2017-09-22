@@ -16,7 +16,8 @@
 - Remove dimen() extension on context/view
 
 ## 0.1.6
-- Add extensions for tinting drawables and retrieving colors list
+- Finally attached sources
 
 ## 0.1.7
+- Add extensions for tinting drawables and retrieving colors list
 - Add CardView with its own lparams. Fixes issue with ClassCastException
