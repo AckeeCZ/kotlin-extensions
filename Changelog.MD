@@ -21,3 +21,9 @@
 ## 0.1.7
 - Add extensions for tinting drawables and retrieving colors list
 - Add CardView with its own lparams. Fixes issue with ClassCastException
+
+## 0.1.8
+- Add Extension function operator for CompositeDisposable so you can call
+```
+    disposables += viewmodel.observeSomething().subscribe()
+```

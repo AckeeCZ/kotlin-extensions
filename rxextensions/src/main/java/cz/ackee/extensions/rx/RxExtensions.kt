@@ -5,6 +5,7 @@ import io.reactivex.Maybe
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
@@ -88,3 +89,7 @@ fun Disposable?.safeDispose() {
     }
 }
 
+operator fun CompositeDisposable.plus(disposable: Disposable): CompositeDisposable {
+    this.add(disposable)
+    return this
+}
