@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/androidextensions" />
             <option value="$PROJECT_DIR$/ankoextensions" />
+            <option value="$PROJECT_DIR$/epoxyextensions" />
             <option value="$PROJECT_DIR$/picassoextensions" />
             <option value="$PROJECT_DIR$/recyclerviewextensions" />
             <option value="$PROJECT_DIR$/rxextensions" />

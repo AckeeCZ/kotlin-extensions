@@ -27,3 +27,6 @@
 ```
     disposables += viewmodel.observeSomething().subscribe()
 ```
+
+## 0.1.9
+- Add extensions (one) for Epoxy
