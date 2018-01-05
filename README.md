@@ -49,3 +49,13 @@ Extensions to RxJava2 with easier subscribing/observing on particular threads an
 compile "cz.ackee.extensions:rxjava2:x.x.x"
 ```
 
+
+
+### ViewModel Extensions
+Extensions to ViewModel stuff from Google's Architecture Components 
+
+### Gradle
+```
+compile "cz.ackee.extensions:viewmodel:x.x.x"
+```
+

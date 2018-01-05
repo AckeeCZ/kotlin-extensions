@@ -1,1 +1,1 @@
-include ':androidextensions', ':picassoextensions', ':rxextensions', ':recyclerviewextensions', ':ankoextensions', ':epoxyextensions'
+include ':androidextensions', ':picassoextensions', ':rxextensions', ':recyclerviewextensions', ':ankoextensions', ':epoxyextensions', ':viewmodelextensions'

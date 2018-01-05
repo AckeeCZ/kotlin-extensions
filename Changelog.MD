@@ -30,3 +30,7 @@
 
 ## 0.1.9
 - Add extensions (one) for Epoxy
+
+## 1.0.0
+- :tada: Update to 1.0.0 version :muscle:
+- Add extensions to ViewModels - shortcut for providing ViewModels in Fragments/Activities
