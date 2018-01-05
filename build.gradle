@@ -39,3 +39,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+/**
+ * Define properties with build info
+ */
+ext.buildProperties = new Properties()
+ext.buildProperties.load(file("${rootDir}/build.properties").newReader())
