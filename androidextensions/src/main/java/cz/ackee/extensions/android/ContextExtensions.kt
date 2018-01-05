@@ -28,15 +28,18 @@ fun Context.color(@ColorRes res: Int): Int {
     return ContextCompat.getColor(this, res)
 }
 
-fun Context.drawable(@DrawableRes res: Int): Drawable {
+fun Context.drawable(@DrawableRes res: Int): Drawable? {
     return ContextCompat.getDrawable(this, res)
 }
 
-fun Context.tintedDrawable(@DrawableRes drawableId: Int, @ColorRes colorId: Int): Drawable {
-    val tint: Int = ContextCompat.getColor(this, colorId)
-    val drawable: Drawable = ContextCompat.getDrawable(this, drawableId)
-    drawable.mutate()
-    DrawableCompat.setTint(drawable, tint)
+fun Context.tintedDrawable(@DrawableRes drawableId: Int, @ColorRes colorId: Int): Drawable? {
+    val tint: Int = color(colorId)
+    val drawable = drawable(drawableId)
+    drawable?.mutate()
+    drawable?.let {
+        it.mutate()
+        DrawableCompat.setTint(it, tint)
+    }
     return drawable
 }
 
@@ -73,7 +76,7 @@ fun Context.attrDimen(attr: Int): Int {
 /**
  * Get drawable defined by attribute [attr]
  */
-fun Context.attrDrawable(attr: Int): Drawable {
+fun Context.attrDrawable(attr: Int): Drawable? {
     val a = theme.obtainStyledAttributes(intArrayOf(attr))
     val attributeResourceId = a.getResourceId(0, 0)
     a.recycle()
