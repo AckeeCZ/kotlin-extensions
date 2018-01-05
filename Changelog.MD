@@ -34,3 +34,4 @@
 ## 1.0.0
 - 🎉 Update to 1.0.0 version 💪
 - Add extensions to ViewModels - shortcut for providing ViewModels in Fragments/Activities
+- Breaking Changes - methods returning Drawables are now nullables to comply with new support library

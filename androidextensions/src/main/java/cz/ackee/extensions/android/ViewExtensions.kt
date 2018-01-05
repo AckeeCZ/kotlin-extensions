@@ -38,11 +38,11 @@ fun View.color(@ColorRes res: Int): Int {
     return context.color(res)
 }
 
-fun View.drawable(@DrawableRes res: Int): Drawable {
+fun View.drawable(@DrawableRes res: Int): Drawable? {
     return context.drawable(res)
 }
 
-fun View.tintedDrawable(@DrawableRes drawableId: Int, @ColorRes colorId: Int): Drawable {
+fun View.tintedDrawable(@DrawableRes drawableId: Int, @ColorRes colorId: Int): Drawable? {
     return context.tintedDrawable(drawableId, colorId)
 }
 
@@ -75,7 +75,7 @@ fun View.attrDimen(attr: Int): Int {
 /**
  * Get drawable defined by attribute [attr]
  */
-fun View.attrDrawable(attr: Int): Drawable {
+fun View.attrDrawable(attr: Int): Drawable? {
     return context.attrDrawable(attr)
 }
 
