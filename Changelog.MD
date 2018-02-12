@@ -38,3 +38,7 @@
 
 ## 1.0.1
 - Add color and colorWithAlpha extensions for Fragment
+
+## 1.0.2
+- Add conversion from Drawable to Bitmap via Drawable.toBitmap() fc
+- Add conversion between Int and Boolean

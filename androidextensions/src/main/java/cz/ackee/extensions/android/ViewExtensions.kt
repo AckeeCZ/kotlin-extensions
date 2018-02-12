@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.support.annotation.*
 import android.support.annotation.IntRange
@@ -141,4 +142,25 @@ var TextView.drawableBottom: Int
  */
 fun ViewGroup.inflate(@LayoutRes layout: Int, attachToParent: Boolean = true) {
     return context.inflate(layout, this, attachToParent)
+}
+
+/**
+ * Convert this Drawable to Bitmap representation. Should take care of every Drawable type
+ */
+fun Drawable.toBitmap(): Bitmap {
+    if (this is BitmapDrawable) {
+        return bitmap
+    }
+
+    val bitmap = if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
+        Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+    } else {
+        Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ARGB_8888)
+    }
+
+    Canvas(bitmap).apply {
+        setBounds(0, 0, width, height)
+        draw(this)
+    }
+    return bitmap
 }

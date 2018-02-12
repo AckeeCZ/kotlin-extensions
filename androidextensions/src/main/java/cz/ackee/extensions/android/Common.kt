@@ -9,7 +9,10 @@ import java.util.*
  * @since 19/04/2017
  **/
 
-
 fun now() = Date()
 
 fun nowMillis() = System.currentTimeMillis()
+
+fun Int.toBoolean() = this > 1
+
+fun Boolean.toInt() = if (this) 1 else 0
