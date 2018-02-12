@@ -13,6 +13,6 @@ fun now() = Date()
 
 fun nowMillis() = System.currentTimeMillis()
 
-fun Int.toBoolean() = this > 1
+fun Int.toBoolean() = this > 0
 
 fun Boolean.toInt() = if (this) 1 else 0
