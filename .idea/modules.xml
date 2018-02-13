@@ -3,13 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AckeeExtensions.iml" filepath="$PROJECT_DIR$/AckeeExtensions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/KotlinExtensions.iml" filepath="$PROJECT_DIR$/KotlinExtensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidextensions/androidextensions.iml" filepath="$PROJECT_DIR$/androidextensions/androidextensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/ankoextensions/ankoextensions.iml" filepath="$PROJECT_DIR$/ankoextensions/ankoextensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/epoxyextensions/epoxyextensions.iml" filepath="$PROJECT_DIR$/epoxyextensions/epoxyextensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/picassoextensions/picassoextensions.iml" filepath="$PROJECT_DIR$/picassoextensions/picassoextensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerviewextensions/recyclerviewextensions.iml" filepath="$PROJECT_DIR$/recyclerviewextensions/recyclerviewextensions.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxextensions/rxextensions.iml" filepath="$PROJECT_DIR$/rxextensions/rxextensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewmodelextensions/viewmodelextensions.iml" filepath="$PROJECT_DIR$/viewmodelextensions/viewmodelextensions.iml" />
     </modules>
   </component>
 </project>
