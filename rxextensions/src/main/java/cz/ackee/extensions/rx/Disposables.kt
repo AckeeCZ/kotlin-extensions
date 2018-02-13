@@ -11,7 +11,7 @@ import io.reactivex.disposables.Disposable
  * Safely dispose = if not null and not already disposed
  */
 fun Disposable?.safeDispose() {
-    if (this != null && !this.isDisposed) {
+    if (this?.isDisposed == false) {
         dispose()
     }
 }
