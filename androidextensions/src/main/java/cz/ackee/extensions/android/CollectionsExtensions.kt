@@ -1,11 +1,7 @@
 package cz.ackee.extensions.android
 
-/**
- * Extensions to collections
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
+
+// Extensions to collections
 
 /**
  * Check if this collection is null or empty

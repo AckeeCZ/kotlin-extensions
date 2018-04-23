@@ -4,12 +4,7 @@ import android.support.annotation.StyleRes
 import android.text.Spannable
 import android.text.style.StyleSpan
 
-/**
- * Extensions for [Spannable]
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
+// Extensions for [Spannable]
 
 /**
  * Highlight substring [query] in this spannable with custom [style]. All occurrences of this substring

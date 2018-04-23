@@ -11,13 +11,7 @@ import android.widget.LinearLayout
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.custom.ankoView
 
-/**
- * Extensions to Anko DSL
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
-
+// Extensions to Anko DSL
 
 /**
  * Anko extensions for [TextInputEditText]
@@ -32,13 +26,12 @@ inline fun ViewManager.textInputEditText(theme: Int = 0, init: TextInputEditText
 val ViewGroup.ankoContext
     get() = AnkoContext.Companion.create(context, this)
 
-
 /**
  * Fixed cardView extension to Anko. CardView from Anko does not have lparams extensions
  * and crashes when defining some. This solution uses same lparams as FrameLayout
  */
-
 inline fun ViewManager.cardView(theme: Int = 0): CardView = cardView(theme) {}
+
 inline fun ViewManager.cardView(theme: Int = 0, init: _CardView.() -> Unit): CardView {
     return ankoView(::_CardView, theme, init)
 }

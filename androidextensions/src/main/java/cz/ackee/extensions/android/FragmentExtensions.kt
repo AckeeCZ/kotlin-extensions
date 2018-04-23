@@ -5,12 +5,7 @@ import android.support.annotation.ColorRes
 import android.support.annotation.IntRange
 import android.support.v4.app.Fragment
 
-/**
- * Extensions for [Fragment] class
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
+// Extensions for [Fragment] class
 
 /**
  * Set arguments to fragment and return current instance
@@ -19,7 +14,6 @@ inline fun <reified T : Fragment> T.withArguments(args: Bundle): T {
     this.arguments = args
     return this
 }
-
 
 /**
  * Set target fragment with request code and return current instance

@@ -4,12 +4,7 @@ import android.widget.ImageView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
-/**
- * Extensions for Picasso
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
+// Extensions for Picasso
 
 /**
  * Load url to ImageView and use optional callback

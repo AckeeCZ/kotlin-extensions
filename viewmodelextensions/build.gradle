@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(buildProperties["MIN_SDK_VERSION"])
         targetSdkVersion Integer.parseInt(buildProperties["SDK_VERSION"])
-        versionCode 1
-        versionName "1.0"
+        versionCode = libProperties['VERSION_CODE']
+        versionName libProperties['VERSION_NAME']
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -23,10 +23,18 @@ android {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
-    provided 'com.android.support:appcompat-v7:27.0.2'
-    provided "android.arch.lifecycle:extensions:1.0.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compileOnly 'com.android.support:appcompat-v7:27.1.1'
+    compileOnly "android.arch.lifecycle:extensions:1.1.1"
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+ext {
+    bintrayName = 'viewmodel'
+    publishedArtifactId = 'viewmodel'
+
+    libraryName = 'ViewModel Extensions'
+    libraryDescription = 'Extensions for Architecture Components ViewModels'
+}
+
+apply from: rootProject.file('gradle/bintray/install.gradle')
+apply from: rootProject.file('gradle/bintray/bintray.gradle')

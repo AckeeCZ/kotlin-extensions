@@ -3,13 +3,7 @@ package cz.ackee.extensions.recyclerview
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 
-/**
- * Extensions for [RecyclerView]
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
-
+// Extensions for [RecyclerView]
 
 fun RecyclerView.onItemClick(onItemClick: (Int) -> Unit) {
     ItemClickSupport
@@ -26,6 +20,7 @@ fun RecyclerView.onItemLongClick(onItemLongClick: (Int) -> Boolean) {
 /**
  * Context getter extension for ViewHolder
  */
-val RecyclerView.ViewHolder.context: Context get() {
-    return itemView.context
-}
+val RecyclerView.ViewHolder.context: Context
+    get() {
+        return itemView.context
+    }

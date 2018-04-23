@@ -5,10 +5,7 @@ import android.view.View
 
 /**
  * Support for item clicks in RecyclerView
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
+ */
 class ItemClickSupport private constructor(private val recyclerView: RecyclerView) {
 
     companion object {
@@ -19,6 +16,7 @@ class ItemClickSupport private constructor(private val recyclerView: RecyclerVie
             }
             return support
         }
+
         fun removeFrom(view: RecyclerView): ItemClickSupport {
             val support = view.getTag(R.id.item_click_support) as ItemClickSupport
             support.detach(view)
@@ -48,6 +46,7 @@ class ItemClickSupport private constructor(private val recyclerView: RecyclerVie
                 view.setOnLongClickListener(onLongClickListener)
             }
         }
+
         override fun onChildViewDetachedFromWindow(view: View) {
         }
     }
@@ -71,5 +70,4 @@ class ItemClickSupport private constructor(private val recyclerView: RecyclerVie
         view.removeOnChildAttachStateChangeListener(attachListener)
         view.setTag(R.id.item_click_support, null)
     }
-
 }

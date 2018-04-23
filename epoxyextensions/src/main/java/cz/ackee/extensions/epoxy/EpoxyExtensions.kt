@@ -5,12 +5,7 @@ import kotlin.properties.ObservableProperty
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-/**
- * Extensions for EpoxyController
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 21/11/2017
- **/
+// Extensions for EpoxyController
 
 /**
  * Returns a property delegate for a read/write property that calls [EpoxyController#requestModelBuild] method when property is changed

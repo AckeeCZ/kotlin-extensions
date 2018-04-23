@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion Integer.parseInt(buildProperties["MIN_SDK_VERSION"])
         targetSdkVersion Integer.parseInt(buildProperties["SDK_VERSION"])
-        versionCode 1
-        versionName "1.0"
+        versionCode = libProperties['VERSION_CODE']
+        versionName libProperties['VERSION_NAME']
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -23,8 +23,17 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+ext {
+    bintrayName = 'android'
+    publishedArtifactId = 'android'
+
+    libraryName = 'Android Extensions'
+    libraryDescription = 'Helpful extensions for Anko'
+}
+
+apply from: rootProject.file('gradle/bintray/install.gradle')
+apply from: rootProject.file('gradle/bintray/bintray.gradle')

@@ -14,12 +14,7 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 
-/**
- * Extensions for [View] class
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
+// Extensions for [View] class
 
 var View.visible: Boolean
     set(value) {
@@ -27,12 +22,10 @@ var View.visible: Boolean
     }
     get() = visibility == View.VISIBLE
 
-
 fun View.hideIme() {
     val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     imm.hideSoftInputFromWindow(windowToken, 0)
 }
-
 
 @ColorInt
 fun View.color(@ColorRes res: Int): Int {
@@ -80,7 +73,6 @@ fun View.attrDrawable(attr: Int): Drawable? {
     return context.attrDrawable(attr)
 }
 
-
 /**
  * Get bitmap representation of view
  */
@@ -92,7 +84,6 @@ fun View.asBitmap(): Bitmap {
     return b
 }
 
-
 /**
  * View artificial attribute that sets compound left drawable
  */
@@ -102,7 +93,6 @@ var TextView.drawableLeft: Int
         val drawables = compoundDrawables
         setCompoundDrawablesWithIntrinsicBounds(context.drawable(value), drawables[1], drawables[2], drawables[3])
     }
-
 
 /**
  * View artificial attribute that sets compound right drawable
@@ -114,7 +104,6 @@ var TextView.drawableRight: Int
         setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], context.drawable(value), drawables[3])
     }
 
-
 /**
  * View artificial attribute that sets compound top drawable
  */
@@ -125,7 +114,6 @@ var TextView.drawableTop: Int
         setCompoundDrawablesWithIntrinsicBounds(drawables[0], context.drawable(value), drawables[2], drawables[3])
     }
 
-
 /**
  * View artificial attribute that sets compound bottom drawable
  */
@@ -135,7 +123,6 @@ var TextView.drawableBottom: Int
         val drawables = compoundDrawables
         setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], drawables[2], context.drawable(value))
     }
-
 
 /**
  * Inflate [layout] into this ViewGroup

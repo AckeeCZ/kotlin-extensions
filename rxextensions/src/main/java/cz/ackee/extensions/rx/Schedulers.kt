@@ -4,9 +4,7 @@ import io.reactivex.*
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-/**
- * Extensions for applying schedulers
- */
+// Extensions for applying schedulers
 
 // Observable
 

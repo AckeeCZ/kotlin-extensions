@@ -16,12 +16,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 
 
-/**
- * Extensions to context class
- *
- * @author David Bilik [david.bilik@ackee.cz]
- * @since 19/04/2017
- **/
+// Extensions to context class
 
 @ColorInt
 fun Context.color(@ColorRes res: Int): Int {

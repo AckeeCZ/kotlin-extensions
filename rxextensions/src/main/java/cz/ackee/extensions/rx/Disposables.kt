@@ -3,9 +3,7 @@ package cz.ackee.extensions.rx
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-/**
- * Extensions for RxJava2
- **/
+// Extensions for RxJava2
 
 /**
  * Safely dispose = if not null and not already disposed
