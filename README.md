@@ -1,3 +1,5 @@
+[ ![Download](https://api.bintray.com/packages/ackeecz/kotlin-extensions/android/images/download.svg) ](https://bintray.com/ackeecz/kotlin-extensions/android/_latestVersion)
+
 # Android Kotlin Extensions
 
 ## Purpose of library
