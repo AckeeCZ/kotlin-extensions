@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.5
+- Deprecated `colorWithAlpha` with `colorWithOpacity` to match better naming
+- Add extension `Int.withOpacity` method to use opacity in percentage directly on Int color
+
+## 1.0.4
+- Service update when migrating from internal GitLab to GitHub
+
 ## 1.0.3
 - Little code clean in RxExtensions
 - Add extensions for Schedulers to Flowable type
