@@ -48,8 +48,17 @@ fun View.string(@StringRes res: Int): String {
  * Get color from resources with alpha
  */
 @ColorInt
+@Deprecated(message = "Use new [colorWithOpacity] extension", replaceWith = ReplaceWith("colorWithOpacity(res, alphaPercent)"))
 fun View.colorWithAlpha(@ColorRes res: Int, @IntRange(from = 0, to = 100) alphaPercent: Int): Int {
-    return context.colorWithAlpha(res, alphaPercent)
+    return colorWithOpacity(res, alphaPercent)
+}
+
+/**
+ * Get color from resources with applied [opacity]
+ */
+@ColorInt
+fun View.colorWithOpacity(@ColorRes res: Int, @IntRange(from = 0, to = 100) opacity: Int): Int {
+    return context.colorWithOpacity(res, opacity)
 }
 
 /**

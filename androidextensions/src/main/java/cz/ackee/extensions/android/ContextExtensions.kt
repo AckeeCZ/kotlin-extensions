@@ -2,7 +2,6 @@ package cz.ackee.extensions.android
 
 import android.content.Context
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.graphics.Point
 import android.graphics.drawable.Drawable
 import android.os.Build
@@ -14,7 +13,6 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.WindowManager
-
 
 // Extensions to context class
 
@@ -46,9 +44,17 @@ fun Context.string(@StringRes res: Int): String {
  * Get color from resources with alpha
  */
 @ColorInt
+@Deprecated(message = "Use new [colorWithOpacity] extension", replaceWith = ReplaceWith("colorWithOpacity(res, alphaPercent)"))
 fun Context.colorWithAlpha(@ColorRes res: Int, @IntRange(from = 0, to = 100) alphaPercent: Int): Int {
-    val color = color(res)
-    return Color.argb((alphaPercent / 100f * 255).toInt(), Color.red(color), Color.green(color), Color.blue(color))
+    return colorWithOpacity(res, alphaPercent)
+}
+
+/**
+ * Get color from resources with applied [opacity]
+ */
+@ColorInt
+fun Context.colorWithOpacity(@ColorRes res: Int, @IntRange(from = 0, to = 100) opacity: Int): Int {
+    return color(res).withOpacity(opacity)
 }
 
 fun Context.colors(@ColorRes stateListRes: Int): ColorStateList? {
@@ -99,7 +105,6 @@ fun Context.screenHeight(): Int {
     return getDisplaySize().y
 }
 
-
 /**
  * Get status bar height
  * @param restrictToLollipop indicator if status bar height resource should be lookup only on versions higher than Lollipop
@@ -117,5 +122,6 @@ private fun Context.getDisplaySize(): Point {
     val display = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
     val size = Point()
     display.getSize(size)
+
     return size
 }

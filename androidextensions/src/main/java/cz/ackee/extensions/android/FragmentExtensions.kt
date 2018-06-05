@@ -1,6 +1,7 @@
 package cz.ackee.extensions.android
 
 import android.os.Bundle
+import android.support.annotation.ColorInt
 import android.support.annotation.ColorRes
 import android.support.annotation.IntRange
 import android.support.v4.app.Fragment
@@ -31,4 +32,12 @@ fun Fragment.color(@ColorRes res: Int) = context!!.color(res)
 /**
  * Get color from resource with fragment context and apply alpha to it.
  */
-fun Fragment.colorWithAlpha(@ColorRes res: Int, @IntRange(from = 0, to = 100) alphaPercent: Int) = context!!.colorWithAlpha(res, alphaPercent)
+@ColorInt
+@Deprecated(message = "Use new [colorWithOpacity] extension", replaceWith = ReplaceWith("colorWithOpacity(res, alphaPercent)"))
+fun Fragment.colorWithAlpha(@ColorRes res: Int, @IntRange(from = 0, to = 100) alphaPercent: Int) = colorWithOpacity(res, alphaPercent)
+
+/**
+ * Get color from resource with fragment context and apply [opacity] to it.
+ */
+@ColorInt
+fun Fragment.colorWithOpacity(@ColorRes res: Int, @IntRange(from = 0, to = 100) opacity: Int) = context!!.colorWithOpacity(res, opacity)
