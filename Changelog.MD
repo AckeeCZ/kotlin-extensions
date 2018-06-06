@@ -1,10 +1,10 @@
 # Changelog
 
-## 1.0.5
+## 1.0.7
 - Deprecated `colorWithAlpha` in favor of `colorWithOpacity` to match better naming
 - Add extension `Int.withOpacity` method to use opacity in percentage directly on Int color
 
-## 1.0.4
+## 1.0.4, 1.0.5, 1.0.6
 - Service update when migrating from internal GitLab to GitHub
 
 ## 1.0.3
