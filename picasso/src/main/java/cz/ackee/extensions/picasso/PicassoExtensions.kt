@@ -7,8 +7,15 @@ import com.squareup.picasso.Picasso
 // Extensions for Picasso
 
 /**
- * Load url to ImageView and use optional callback
+ * Load url to ImageView and use optional callback or noFade to disable fade animation
  */
-fun ImageView.loadUrl(url: String, callback: Callback? = null) {
-    Picasso.with(context).load(url).into(this, callback)
+fun ImageView.loadUrl(url: String, noFade: Boolean = false, callback: Callback? = null) {
+    Picasso.with(context)
+            .load(url)
+            .apply {
+                if (noFade) {
+                    noFade()
+                }
+            }
+            .into(this, callback)
 }
