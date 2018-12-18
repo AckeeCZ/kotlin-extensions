@@ -3,14 +3,14 @@
 # Android Kotlin Extensions
 
 ## Purpose of library
-This library serves as collection of various kotlin extensions that simplifies developers life. All Kotlin projects had its own extensions and in most cases they done the same but had different syntax etc. This project tries to unify that problem with clear separation of extensions based on its dependencies.
+This library serves as a collection of various Kotlin extensions that simplifies developers life. All of our Kotlin projects had its own extensions and in most cases they've done the same but had different names, syntax etc. This project tries to unify that problem with clear separation of extensions based on its dependencies.
 
-All extensions are collected from projects that are bases on Kotlin/Anko
+All extensions are collected from projects that are based on Kotlin/Anko
 
 ## Structure
-Extensions are grouped to submodules that has the same dependency. So for example if extensions has dependency to RxJava they are in separate module.
+Extensions are grouped to submodules that have the same dependency. So for example if extensions have dependency to RxJava they are in separate module.
 
-All modules has the same version. Current version is in `gradle.properties` file.
+All modules has the same version. Current version is in `gradle.properties` file and can be seen in the badge above. 
 ### Android Extensions
 Extensions to core Android Framework and some Support Library classes like Fragment.
 
