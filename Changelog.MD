@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.9
+- Add `EpoxyModelWithLayout` - Epoxy Model with view contained in `ViewLayout`
+
 ## 1.0.8
 - Add `ViewLayout` - class representation of layout created with anko, extensions for creating such layout.
 
