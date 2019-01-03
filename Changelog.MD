@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.8
+- Add `ViewLayout` - class representation of layout created with anko, extensions for creating such layout.
+
 ## 1.0.7
 - Deprecated `colorWithAlpha` in favor of `colorWithOpacity` to match better naming
 - Add extension `Int.withOpacity` method to use opacity in percentage directly on Int color
