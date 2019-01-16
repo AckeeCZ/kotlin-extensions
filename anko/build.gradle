@@ -12,6 +12,7 @@ android {
         versionName libProperties['VERSION_NAME']
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-proguard-rules.txt'
     }
 
     buildTypes {

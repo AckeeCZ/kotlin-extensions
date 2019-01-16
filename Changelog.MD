@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.10
+- Added proguard rules to `anko` module.
+
 ## 1.0.9
 - Add `EpoxyModelWithLayout` - Epoxy Model with view contained in `ViewLayout`
 
