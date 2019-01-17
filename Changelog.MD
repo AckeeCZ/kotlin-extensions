@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.10
+- Added proguard rules to `anko` module.
+- Deprecated `CompositeDisposable.plus` in favor of RxKotlin library extension
+- Added Drawable extensions
+
 ## 1.0.9
 - Add `EpoxyModelWithLayout` - Epoxy Model with view contained in `ViewLayout`
 
