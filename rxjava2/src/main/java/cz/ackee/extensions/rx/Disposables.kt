@@ -17,6 +17,7 @@ fun Disposable?.safeDispose() {
 /**
  * Overloaded operator to allow adding [Disposable] to [CompositeDisposable] via + sign
  */
+@Deprecated("Use RxKotlin library", replaceWith = ReplaceWith("+=", "io.reactivex.rxkotlin.plusAssign"))
 operator fun CompositeDisposable.plus(disposable: Disposable): CompositeDisposable {
     this.add(disposable)
     return this
