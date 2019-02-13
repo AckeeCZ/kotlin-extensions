@@ -1,8 +1,8 @@
 package cz.ackee.extensions.android
 
-import android.support.annotation.StyleRes
 import android.text.Spannable
 import android.text.style.StyleSpan
+import androidx.annotation.StyleRes
 
 // Extensions for [Spannable]
 

@@ -1,20 +1,20 @@
 package cz.ackee.extensions.recyclerview
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 
 // Extensions for [RecyclerView]
 
 fun RecyclerView.onItemClick(onItemClick: (Int) -> Unit) {
     ItemClickSupport
-            .addTo(this)
-            .onItemClick(onItemClick)
+        .addTo(this)
+        .onItemClick(onItemClick)
 }
 
 fun RecyclerView.onItemLongClick(onItemLongClick: (Int) -> Boolean) {
     ItemClickSupport
-            .addTo(this)
-            .onLongItemClick(onItemLongClick)
+        .addTo(this)
+        .onLongItemClick(onItemLongClick)
 }
 
 /**

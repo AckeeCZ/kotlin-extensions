@@ -1,8 +1,8 @@
 package cz.ackee.extensions.android
 
 import android.graphics.Color
-import android.support.annotation.ColorInt
-import android.support.annotation.IntRange
+import androidx.annotation.ColorInt
+import androidx.annotation.IntRange
 import java.util.Date
 
 // Useful functions not related to any class

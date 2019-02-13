@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion Integer.parseInt(buildProperties["SDK_VERSION"])
-    buildToolsVersion buildProperties["BUILDTOOLS_VERSION"]
 
     defaultConfig {
         minSdkVersion Integer.parseInt(buildProperties["MIN_SDK_VERSION"])
@@ -11,7 +10,7 @@ android {
         versionCode = libProperties['VERSION_CODE']
         versionName libProperties['VERSION_NAME']
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -24,8 +23,8 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    compileOnly 'com.android.support:appcompat-v7:27.1.1'
-    compileOnly "android.arch.lifecycle:extensions:1.1.1"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
 }
 
 ext {

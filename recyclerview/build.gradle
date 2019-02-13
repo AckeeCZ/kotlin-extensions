@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion Integer.parseInt(buildProperties["SDK_VERSION"])
-    buildToolsVersion buildProperties["BUILDTOOLS_VERSION"]
 
     defaultConfig {
         minSdkVersion Integer.parseInt(buildProperties["MIN_SDK_VERSION"])
@@ -11,7 +10,7 @@ android {
         versionCode = libProperties['VERSION_CODE']
         versionName libProperties['VERSION_NAME']
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -23,9 +22,9 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
 }
 
 ext {
