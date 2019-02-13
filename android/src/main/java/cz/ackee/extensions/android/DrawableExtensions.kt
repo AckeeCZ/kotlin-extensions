@@ -7,7 +7,7 @@ import android.graphics.drawable.GradientDrawable
 import android.graphics.drawable.RippleDrawable
 import android.graphics.drawable.StateListDrawable
 import android.os.Build
-import android.support.annotation.ColorInt
+import androidx.annotation.ColorInt
 
 // Extensions for creating drawables and other drawable-related helpers
 

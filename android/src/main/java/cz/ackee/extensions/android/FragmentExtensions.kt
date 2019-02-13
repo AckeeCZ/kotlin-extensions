@@ -1,10 +1,10 @@
 package cz.ackee.extensions.android
 
 import android.os.Bundle
-import android.support.annotation.ColorInt
-import android.support.annotation.ColorRes
-import android.support.annotation.IntRange
-import android.support.v4.app.Fragment
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.IntRange
+import androidx.fragment.app.Fragment
 
 // Extensions for [Fragment] class
 

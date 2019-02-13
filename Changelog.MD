@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.0
+- AndroidX support
+
 ## 1.0.10
 - Added proguard rules to `anko` module.
 - Deprecated `CompositeDisposable.plus` in favor of RxKotlin library extension

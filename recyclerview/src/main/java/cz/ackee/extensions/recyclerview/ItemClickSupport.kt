@@ -1,7 +1,7 @@
 package cz.ackee.extensions.recyclerview
 
-import android.support.v7.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * Support for item clicks in RecyclerView

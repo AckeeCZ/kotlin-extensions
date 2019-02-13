@@ -6,13 +6,13 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
-import android.support.annotation.*
-import android.support.annotation.IntRange
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import androidx.annotation.*
+import androidx.annotation.IntRange
 
 // Extensions for [View] class
 
