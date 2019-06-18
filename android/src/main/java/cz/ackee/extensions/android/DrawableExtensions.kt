@@ -15,7 +15,7 @@ fun backgroundDrawable(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
-    @ColorInt pressedColor: Int = color,
+    @ColorInt pressedColor: Int = color.toDarkerColor(),
     @ColorInt disabledColor: Int = color,
     mask: Drawable? = null,
     radius: Number = 0f,
@@ -58,6 +58,16 @@ fun backgroundDrawable(
         })
         addState(intArrayOf(), baseDrawable)
     }
+}
+
+/**
+* Convert color to darker shade
+*/
+fun Int.toDarkerColor(): Int {
+    val hsv = floatArrayOf(0f, 0f, 0f)
+    Color.colorToHSV(this, hsv)
+    hsv[2] *= 0.8f
+    return Color.HSVToColor(hsv)
 }
 
 private fun GradientDrawable.setCornerRadius(
