@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.1
+- Use darker color for pressed state in buttonDrawable function
+
 ## 1.1.0
 - AndroidX support
 
