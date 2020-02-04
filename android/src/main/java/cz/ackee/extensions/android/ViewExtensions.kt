@@ -94,43 +94,79 @@ fun View.asBitmap(): Bitmap {
 }
 
 /**
+ * View artificial attribute that sets compound left drawable resource
+ */
+var TextView.drawableLeftResource: Int
+    get() = throw IllegalAccessException("Property drawableLeftResource only as setter")
+    set(value) {
+        drawableLeft = context.drawable(value)
+    }
+
+/**
+ * View artificial attribute that sets compound right drawable resource
+ */
+var TextView.drawableRightResource: Int
+    get() = throw IllegalAccessException("Property drawableRightResource only as setter")
+    set(value) {
+       drawableRight = context.drawable(value)
+    }
+
+/**
+ * View artificial attribute that sets compound top drawable resource
+ */
+var TextView.drawableTopResource: Int
+    get() = throw IllegalAccessException("Property drawableTopResource only as setter")
+    set(value) {
+        drawableTop = context.drawable(value)
+    }
+
+/**
+ * View artificial attribute that sets compound bottom drawable resource
+ */
+var TextView.drawableBottomResource: Int
+    get() = throw IllegalAccessException("Property drawableBottomResource only as setter")
+    set(value) {
+       drawableBottom = context.drawable(value)
+    }
+
+/**
  * View artificial attribute that sets compound left drawable
  */
-var TextView.drawableLeft: Int
+var TextView.drawableLeft: Drawable?
     get() = throw IllegalAccessException("Property drawableLeft only as setter")
     set(value) {
         val drawables = compoundDrawables
-        setCompoundDrawablesWithIntrinsicBounds(context.drawable(value), drawables[1], drawables[2], drawables[3])
+        setCompoundDrawablesWithIntrinsicBounds(value, drawables[1], drawables[2], drawables[3])
     }
 
 /**
  * View artificial attribute that sets compound right drawable
  */
-var TextView.drawableRight: Int
+var TextView.drawableRight: Drawable?
     get() = throw IllegalAccessException("Property drawableRight only as setter")
     set(value) {
         val drawables = compoundDrawables
-        setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], context.drawable(value), drawables[3])
+        setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], value, drawables[3])
     }
 
 /**
  * View artificial attribute that sets compound top drawable
  */
-var TextView.drawableTop: Int
+var TextView.drawableTop: Drawable?
     get() = throw IllegalAccessException("Property drawableTop only as setter")
     set(value) {
         val drawables = compoundDrawables
-        setCompoundDrawablesWithIntrinsicBounds(drawables[0], context.drawable(value), drawables[2], drawables[3])
+        setCompoundDrawablesWithIntrinsicBounds(drawables[0], value, drawables[2], drawables[3])
     }
 
 /**
  * View artificial attribute that sets compound bottom drawable
  */
-var TextView.drawableBottom: Int
+var TextView.drawableBottom: Drawable?
     get() = throw IllegalAccessException("Property drawableBottom only as setter")
     set(value) {
         val drawables = compoundDrawables
-        setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], drawables[2], context.drawable(value))
+        setCompoundDrawablesWithIntrinsicBounds(drawables[0], drawables[1], drawables[2], value)
     }
 
 /**
