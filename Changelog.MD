@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+- Rename extensions `drawableLeft` (Right, Top, Bottom) to `drawableLeftResource` and corresponding variants
+- Add extensions `drawableLeft` (Right, Top, Bottom) which are using Drawable as input parameter 
+
 ## 1.1.1
 - Use darker color for pressed state in buttonDrawable function
 
