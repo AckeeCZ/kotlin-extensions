@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.View.GONE
@@ -108,7 +107,7 @@ var TextView.drawableLeftResource: Int
 var TextView.drawableRightResource: Int
     get() = throw IllegalAccessException("Property drawableRightResource only as setter")
     set(value) {
-       drawableRight = context.drawable(value)
+        drawableRight = context.drawable(value)
     }
 
 /**
@@ -126,7 +125,7 @@ var TextView.drawableTopResource: Int
 var TextView.drawableBottomResource: Int
     get() = throw IllegalAccessException("Property drawableBottomResource only as setter")
     set(value) {
-       drawableBottom = context.drawable(value)
+        drawableBottom = context.drawable(value)
     }
 
 /**
@@ -176,23 +175,15 @@ fun ViewGroup.inflate(@LayoutRes layout: Int, attachToParent: Boolean = true) {
     return context.inflate(layout, this, attachToParent)
 }
 
-/**
- * Convert this Drawable to Bitmap representation. Should take care of every Drawable type
- */
-fun Drawable.toBitmap(): Bitmap {
-    if (this is BitmapDrawable) {
-        return bitmap
-    }
+const val CLICK_THROTTLE_DELAY = 200L
 
-    val bitmap = if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
-        Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
-    } else {
-        Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ARGB_8888)
+fun View.onThrottledClick(
+    throttleDelay: Long = CLICK_THROTTLE_DELAY,
+    onClick: (View) -> Unit
+) {
+    setOnClickListener {
+        onClick(this)
+        isClickable = false
+        postDelayed({ isClickable = true }, throttleDelay)
     }
-
-    Canvas(bitmap).apply {
-        setBounds(0, 0, width, height)
-        draw(this)
-    }
-    return bitmap
 }
