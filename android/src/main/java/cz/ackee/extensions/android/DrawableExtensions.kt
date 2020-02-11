@@ -16,6 +16,7 @@ fun backgroundDrawable(
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
     @ColorInt pressedColor: Int = color.toDarkerColor(),
+    @ColorInt focusedColor: Int = color,
     @ColorInt disabledColor: Int = color,
     mask: Drawable? = null,
     radius: Number = 0f,
@@ -30,6 +31,11 @@ fun backgroundDrawable(
         addState(intArrayOf(-android.R.attr.state_enabled), GradientDrawable().apply {
             setCornerRadius(radius, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius)
             setColor(disabledColor)
+            setStroke(strokeWidth, strokeColor)
+        })
+        addState(intArrayOf(android.R.attr.state_focused), GradientDrawable().apply {
+            setCornerRadius(radius, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius)
+            setColor(focusedColor)
             setStroke(strokeWidth, strokeColor)
         })
         addState(intArrayOf(android.R.attr.state_checked), GradientDrawable().apply {
