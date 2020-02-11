@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.View.GONE
@@ -108,7 +107,7 @@ var TextView.drawableLeftResource: Int
 var TextView.drawableRightResource: Int
     get() = throw IllegalAccessException("Property drawableRightResource only as setter")
     set(value) {
-       drawableRight = context.drawable(value)
+        drawableRight = context.drawable(value)
     }
 
 /**
@@ -126,7 +125,7 @@ var TextView.drawableTopResource: Int
 var TextView.drawableBottomResource: Int
     get() = throw IllegalAccessException("Property drawableBottomResource only as setter")
     set(value) {
-       drawableBottom = context.drawable(value)
+        drawableBottom = context.drawable(value)
     }
 
 /**
@@ -174,4 +173,17 @@ var TextView.drawableBottom: Drawable?
  */
 fun ViewGroup.inflate(@LayoutRes layout: Int, attachToParent: Boolean = true) {
     return context.inflate(layout, this, attachToParent)
+}
+
+const val CLICK_THROTTLE_DELAY = 200L
+
+fun View.onThrottledClick(
+    throttleDelay: Long = CLICK_THROTTLE_DELAY,
+    onClick: (View) -> Unit
+) {
+    setOnClickListener {
+        onClick(this)
+        isClickable = false
+        postDelayed({ isClickable = true }, throttleDelay)
+    }
 }
