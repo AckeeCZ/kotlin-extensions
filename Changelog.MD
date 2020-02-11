@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0
+- Add `focused` state to `backgroundDrawable` extension
+- Move `Drawable.toBitmap` function to `DrawableExtensions`
+- Create `onThrottledClick` extension which prevents the view to be clicked on again for a small time interval
+
 ## 1.2.0
 - Rename extensions `drawableLeft` (Right, Top, Bottom) to `drawableLeftResource` and corresponding variants
 - Add extensions `drawableLeft` (Right, Top, Bottom) which are using Drawable as input parameter 
