@@ -1,11 +1,10 @@
 package cz.ackee.extensions.android
 
 import android.content.res.ColorStateList
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.RippleDrawable
-import android.graphics.drawable.StateListDrawable
+import android.graphics.drawable.*
 import android.os.Build
 import androidx.annotation.ColorInt
 
@@ -16,6 +15,7 @@ fun backgroundDrawable(
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
     @ColorInt pressedColor: Int = color.toDarkerColor(),
+    @ColorInt focusedColor: Int = color,
     @ColorInt disabledColor: Int = color,
     mask: Drawable? = null,
     radius: Number = 0f,
@@ -30,6 +30,11 @@ fun backgroundDrawable(
         addState(intArrayOf(-android.R.attr.state_enabled), GradientDrawable().apply {
             setCornerRadius(radius, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius)
             setColor(disabledColor)
+            setStroke(strokeWidth, strokeColor)
+        })
+        addState(intArrayOf(android.R.attr.state_focused), GradientDrawable().apply {
+            setCornerRadius(radius, topLeftRadius, topRightRadius, bottomLeftRadius, bottomRightRadius)
+            setColor(focusedColor)
             setStroke(strokeWidth, strokeColor)
         })
         addState(intArrayOf(android.R.attr.state_checked), GradientDrawable().apply {
@@ -106,4 +111,25 @@ fun colorStateList(
         intArrayOf() to normalColor
     ).filterValues { it != null }
     return ColorStateList(states.keys.toTypedArray(), states.values.map { it!!.toInt() }.toIntArray())
+}
+
+/**
+ * Convert this Drawable to Bitmap representation. Should take care of every Drawable type
+ */
+fun Drawable.toBitmap(): Bitmap {
+    if (this is BitmapDrawable) {
+        return bitmap
+    }
+
+    val bitmap = if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
+        Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+    } else {
+        Bitmap.createBitmap(intrinsicWidth, intrinsicHeight, Bitmap.Config.ARGB_8888)
+    }
+
+    Canvas(bitmap).apply {
+        setBounds(0, 0, width, height)
+        draw(this)
+    }
+    return bitmap
 }
