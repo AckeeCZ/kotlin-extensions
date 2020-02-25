@@ -3,7 +3,7 @@ name: Java CI
 on:
   create:
     tags:
-      - 1.*
+      - v*
 
 jobs:
   build:
