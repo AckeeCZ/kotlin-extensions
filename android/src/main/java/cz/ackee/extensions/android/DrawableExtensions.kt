@@ -1,5 +1,6 @@
 package cz.ackee.extensions.android
 
+import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
@@ -10,7 +11,47 @@ import androidx.annotation.ColorInt
 
 // Extensions for creating drawables and other drawable-related helpers
 
+/**
+ * Background Drawable. Do support dark mode
+ */
 fun backgroundDrawable(
+    context: Context,
+    @ColorInt color: Int,
+    isButton: Boolean = false,
+    @ColorInt checkedColor: Int = color,
+    @ColorInt focusedColor: Int = color,
+    @ColorInt disabledColor: Int = color,
+    mask: Drawable? = null,
+    radius: Number = 0f,
+    strokeColor: Int = Color.TRANSPARENT,
+    strokeWidth: Int = 0,
+    topLeftRadius: Number = 0f,
+    topRightRadius: Number = 0f,
+    bottomLeftRadius: Number = 0f,
+    bottomRightRadius: Number = 0f
+): Drawable {
+    return backgroundDrawable(
+        color = color,
+        isButton = isButton,
+        checkedColor = checkedColor,
+        pressedColor = if (context.isDarkModeOn()) color.toLighterColor() else color.toDarkerColor(),
+        focusedColor = focusedColor,
+        disabledColor = disabledColor,
+        mask = mask,
+        radius = radius,
+        strokeColor = strokeColor,
+        strokeWidth = strokeWidth,
+        topLeftRadius = topLeftRadius,
+        topRightRadius = topRightRadius,
+        bottomLeftRadius = bottomLeftRadius,
+        bottomRightRadius = bottomRightRadius
+    )
+}
+
+/**
+ * Background Drawable. Doesn't support dark mode
+ */
+private fun backgroundDrawable(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
@@ -74,6 +115,17 @@ fun Int.toDarkerColor(): Int {
     hsv[2] *= 0.8f
     return Color.HSVToColor(hsv)
 }
+
+/**
+ * Convert color to lighter shade
+ */
+fun Int.toLighterColor(): Int {
+    val hsv = floatArrayOf(0f, 0f, 0f)
+    Color.colorToHSV(this, hsv)
+    hsv[2] = 0.2f + 0.8f * hsv[2];
+    return Color.HSVToColor(hsv)
+}
+
 
 private fun GradientDrawable.setCornerRadius(
     radius: Number,

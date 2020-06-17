@@ -79,6 +79,13 @@ fun View.attrDimen(attr: Int): Int {
 }
 
 /**
+ * Get whether dark mode is enabled or not
+ */
+fun View.isDarkModeOn(): Boolean {
+    return context.isDarkModeOn()
+}
+
+/**
  * Get drawable defined by attribute [attr]
  */
 fun View.attrDrawable(attr: Int): Drawable? {
