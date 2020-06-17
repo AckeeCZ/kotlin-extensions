@@ -15,7 +15,10 @@ import androidx.annotation.IntRange
 
 // Extensions for [View] class
 
-@Deprecated(message = "Use [View.isVisible] extension from core-ktx")
+@Deprecated(
+    message = "Use [View.isVisible] extension from core-ktx",
+    replaceWith = ReplaceWith("View.isVisible")
+)
 var View.visible: Boolean
     set(value) {
         visibility = if (value) View.VISIBLE else GONE
@@ -85,7 +88,10 @@ fun View.attrDrawable(attr: Int): Drawable? {
 /**
  * Get bitmap representation of view
  */
-@Deprecated(message = "Use [View.toBitmap(config: Config)] extension from core-ktx")
+@Deprecated(
+    message = "Use [View.drawToBitmap(config: Config)] extension from core-ktx",
+    replaceWith = ReplaceWith("View.drawToBitmap()")
+)
 fun View.asBitmap(): Bitmap {
     val b = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
     val c = Canvas(b)

@@ -116,7 +116,10 @@ fun colorStateList(
 /**
  * Convert this Drawable to Bitmap representation. Should take care of every Drawable type
  */
-@Deprecated(message = "Use [Drawable.toBitmap(width: Int, height: Int, config: Config?)] extension from core-ktx")
+@Deprecated(
+    message = "Use [Drawable.toBitmap(width: Int, height: Int, config: Config?)] extension from core-ktx",
+    replaceWith = ReplaceWith("Drawable.toBitmap()", "androidx.core.graphics.drawable.toBitmap")
+)
 fun Drawable.toBitmap(): Bitmap {
     if (this is BitmapDrawable) {
         return bitmap
