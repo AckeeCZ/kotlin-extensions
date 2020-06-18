@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.*
 import android.os.Build
+import android.view.View
 import androidx.annotation.ColorInt
 
 // Extensions for creating drawables and other drawable-related helpers
@@ -14,8 +15,7 @@ import androidx.annotation.ColorInt
 /**
  * Background Drawable. Do support dark mode
  */
-fun backgroundDrawable(
-    context: Context,
+fun View.backgroundDrawableDarkMode(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
@@ -51,7 +51,7 @@ fun backgroundDrawable(
 /**
  * Background Drawable. Doesn't support dark mode
  */
-private fun backgroundDrawable(
+fun backgroundDrawable(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
