@@ -1,61 +1,21 @@
 package cz.ackee.extensions.android
 
-import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.*
 import android.os.Build
-import android.view.View
 import androidx.annotation.ColorInt
+import androidx.core.graphics.ColorUtils
 
 // Extensions for creating drawables and other drawable-related helpers
 
-/**
- * Background Drawable. Do support dark mode
- */
-fun View.backgroundDrawableDarkMode(
-    @ColorInt color: Int,
-    isButton: Boolean = false,
-    @ColorInt checkedColor: Int = color,
-    @ColorInt focusedColor: Int = color,
-    @ColorInt disabledColor: Int = color,
-    mask: Drawable? = null,
-    radius: Number = 0f,
-    strokeColor: Int = Color.TRANSPARENT,
-    strokeWidth: Int = 0,
-    topLeftRadius: Number = 0f,
-    topRightRadius: Number = 0f,
-    bottomLeftRadius: Number = 0f,
-    bottomRightRadius: Number = 0f
-): Drawable {
-    return backgroundDrawable(
-        color = color,
-        isButton = isButton,
-        checkedColor = checkedColor,
-        pressedColor = if (context.isDarkModeOn()) color.toLighterColor() else color.toDarkerColor(),
-        focusedColor = focusedColor,
-        disabledColor = disabledColor,
-        mask = mask,
-        radius = radius,
-        strokeColor = strokeColor,
-        strokeWidth = strokeWidth,
-        topLeftRadius = topLeftRadius,
-        topRightRadius = topRightRadius,
-        bottomLeftRadius = bottomLeftRadius,
-        bottomRightRadius = bottomRightRadius
-    )
-}
-
-/**
- * Background Drawable. Doesn't support dark mode
- */
 fun backgroundDrawable(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
-    @ColorInt pressedColor: Int = color.toDarkerColor(),
+    @ColorInt pressedColor: Int = if (ColorUtils.calculateLuminance(color) < 0.5) color.toLighterColor() else color.toDarkerColor(),
     @ColorInt focusedColor: Int = color,
     @ColorInt disabledColor: Int = color,
     mask: Drawable? = null,
