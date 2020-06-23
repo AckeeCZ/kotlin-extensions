@@ -15,7 +15,7 @@ fun backgroundDrawable(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
-    @ColorInt pressedColor: Int = if (ColorUtils.calculateLuminance(color) < 0.5) color.toLighterColor() else color.toDarkerColor(),
+    @ColorInt pressedColor: Int = if (isDarkColor(color)) color.toLighterColor() else color.toDarkerColor(),
     @ColorInt focusedColor: Int = color,
     @ColorInt disabledColor: Int = color,
     mask: Drawable? = null,
@@ -148,4 +148,8 @@ fun Drawable.toBitmap(): Bitmap {
         draw(this)
     }
     return bitmap
+}
+
+private fun isDarkColor(color: Int): Boolean {
+    return ColorUtils.calculateLuminance(color) < 0.5
 }
