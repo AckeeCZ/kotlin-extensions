@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.graphics.drawable.*
 import android.os.Build
 import androidx.annotation.ColorInt
+import androidx.core.graphics.ColorUtils
 
 // Extensions for creating drawables and other drawable-related helpers
 
@@ -14,7 +15,7 @@ fun backgroundDrawable(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
-    @ColorInt pressedColor: Int = color.toDarkerColor(),
+    @ColorInt pressedColor: Int = if (isDarkColor(color)) color.toLighterColor() else color.toDarkerColor(),
     @ColorInt focusedColor: Int = color,
     @ColorInt disabledColor: Int = color,
     mask: Drawable? = null,
@@ -74,6 +75,17 @@ fun Int.toDarkerColor(): Int {
     hsv[2] *= 0.8f
     return Color.HSVToColor(hsv)
 }
+
+/**
+ * Convert color to lighter shade
+ */
+fun Int.toLighterColor(): Int {
+    val hsv = floatArrayOf(0f, 0f, 0f)
+    Color.colorToHSV(this, hsv)
+    hsv[2] = 0.2f + 0.8f * hsv[2];
+    return Color.HSVToColor(hsv)
+}
+
 
 private fun GradientDrawable.setCornerRadius(
     radius: Number,
@@ -136,4 +148,8 @@ fun Drawable.toBitmap(): Bitmap {
         draw(this)
     }
     return bitmap
+}
+
+private fun isDarkColor(color: Int): Boolean {
+    return ColorUtils.calculateLuminance(color) < 0.5
 }

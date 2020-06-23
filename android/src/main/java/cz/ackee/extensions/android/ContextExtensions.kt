@@ -2,6 +2,7 @@ package cz.ackee.extensions.android
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.content.res.Configuration
 import android.graphics.Point
 import android.graphics.drawable.Drawable
 import android.os.Build
@@ -117,6 +118,15 @@ fun Context.statusBarHeight(restrictToLollipop: Boolean = true): Int {
     }
     return result
 }
+
+/**
+ * Get whether dark mode is enabled or not
+ */
+fun Context.isDarkModeOn(): Boolean {
+    val currentNightMode = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+    return currentNightMode == Configuration.UI_MODE_NIGHT_YES
+}
+
 
 private fun Context.getDisplaySize(): Point {
     val display = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
