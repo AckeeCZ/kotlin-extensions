@@ -1,6 +1,11 @@
 # Changelog
 
 ## 1.3.0
+- Deprecate `Drawable.toBitmap`, `View.visible` and `View.asBitmap` in favor of the Core KTX extensions
+- Add check for dark mode with `Context.isDarkModeOn` and `View.isDarkModeOn`
+- Adjust `backgroundDrawable` to calculate default ripple color based on luminance of the normal color
+
+## 1.3.0
 - Add `focused` state to `backgroundDrawable` extension
 - Move `Drawable.toBitmap` function to `DrawableExtensions`
 - Create `onThrottledClick` extension which prevents the view to be clicked on again for a small time interval
