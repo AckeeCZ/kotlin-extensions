@@ -1,17 +1,23 @@
 package cz.ackee.extensions.android
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.content.res.Configuration
 import android.graphics.Point
 import android.graphics.drawable.Drawable
+import android.net.Uri
 import android.os.Build
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.annotation.*
+import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.annotation.IntRange
+import androidx.annotation.LayoutRes
+import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
 
@@ -127,6 +133,20 @@ fun Context.isDarkModeOn(): Boolean {
     return currentNightMode == Configuration.UI_MODE_NIGHT_YES
 }
 
+/**
+ * Open Play Store with the application ID from provided context.
+ */
+fun Context.openPlayStore(): Boolean {
+    val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName"))
+    val availableActivities = packageManager.queryIntentActivities(intent, 0);
+
+    return if (availableActivities.isNotEmpty()) {
+        startActivity(intent)
+        true
+    } else {
+        false
+    }
+}
 
 private fun Context.getDisplaySize(): Point {
     val display = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
