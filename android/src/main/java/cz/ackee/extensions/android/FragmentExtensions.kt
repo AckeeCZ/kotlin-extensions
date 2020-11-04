@@ -41,3 +41,9 @@ fun Fragment.colorWithAlpha(@ColorRes res: Int, @IntRange(from = 0, to = 100) al
  */
 @ColorInt
 fun Fragment.colorWithOpacity(@ColorRes res: Int, @IntRange(from = 0, to = 100) opacity: Int) = context!!.colorWithOpacity(res, opacity)
+
+/**
+ * Open Play Store with the application ID from provided context. Return true if the intent can be
+ * and will be handled, false otherwise.
+ */
+fun Fragment.openPlayStore() = requireContext().openPlayStore()
