@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.3.2
+- Add `openPlayStore` extension on `Context` and `Fragment`
+
 ## 1.3.1
 - Deprecate `Drawable.toBitmap`, `View.visible` and `View.asBitmap` in favor of the Core KTX extensions
 - Add check for dark mode with `Context.isDarkModeOn` and `View.isDarkModeOn`
