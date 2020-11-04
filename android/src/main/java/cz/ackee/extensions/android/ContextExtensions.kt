@@ -134,7 +134,8 @@ fun Context.isDarkModeOn(): Boolean {
 }
 
 /**
- * Open Play Store with the application ID from provided context.
+ * Open Play Store with the application ID from provided context. Return true if the intent can be
+ * and will be handled, false otherwise.
  */
 fun Context.openPlayStore(): Boolean {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=$packageName"))
