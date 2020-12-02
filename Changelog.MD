@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.0
+- Add `epoxy2` module that does not have a dependency on Anko. This module now contains EpoxyModelWithViewBinding.
+
 ## 1.3.2
 - Add `openPlayStore` extension on `Context` and `Fragment`
 
