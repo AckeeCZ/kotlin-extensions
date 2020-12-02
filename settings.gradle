@@ -1,1 +1,1 @@
-include ':android', ':picasso', ':rxjava2', ':recyclerview', ':anko', ':epoxy', ':viewmodel'
+include ':android', ':picasso', ':rxjava2', ':recyclerview', ':anko', ':epoxy', ':viewmodel', ':epoxy2'

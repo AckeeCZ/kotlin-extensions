@@ -56,9 +56,17 @@ compile "cz.ackee.extensions:viewmodel:x.x.x"
 
 ### Epoxy Extensions
 Extensions to Epoxy and base epoxy model.
+@Deprecated due to its dependency on Anko. Use epoxy2 on projects without Anko.
 
 ```
 compile "cz.ackee.extensions:epoxy:x.x.x"
+```
+
+### Epoxy 2 Extensions
+Epoxy extensions without dependency on Anko.
+
+```
+compile "cz.ackee.extensions:epoxy2:x.x.x"
 ```
 
 ## License
