@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.1
+- Tweak luminance threshold in the ripple color formula for `backgroundDrawable`
+
 ## 1.4.0
 - Add `epoxy2` module that does not have a dependency on Anko. This module now contains EpoxyModelWithViewBinding.
 
