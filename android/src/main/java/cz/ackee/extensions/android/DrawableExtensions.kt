@@ -15,7 +15,7 @@ fun backgroundDrawable(
     @ColorInt color: Int,
     isButton: Boolean = false,
     @ColorInt checkedColor: Int = color,
-    @ColorInt pressedColor: Int = if (isDarkColor(color)) color.toLighterColor() else color.toDarkerColor(),
+    @ColorInt pressedColor: Int = color.toPressedColor(),
     @ColorInt focusedColor: Int = color,
     @ColorInt disabledColor: Int = color,
     mask: Drawable? = null,
@@ -66,14 +66,16 @@ fun backgroundDrawable(
     }
 }
 
-/**
-* Convert color to darker shade
-*/
-fun Int.toDarkerColor(): Int {
-    val hsv = floatArrayOf(0f, 0f, 0f)
-    Color.colorToHSV(this, hsv)
-    hsv[2] *= 0.8f
-    return Color.HSVToColor(hsv)
+private fun Int.toPressedColor(): Int {
+    return if (isDarkColor(this)) {
+        toLighterColor()
+    } else {
+        toDarkerColor()
+    }
+}
+
+private fun isDarkColor(color: Int): Boolean {
+    return ColorUtils.calculateLuminance(color) < 0.15
 }
 
 /**
@@ -86,6 +88,15 @@ fun Int.toLighterColor(): Int {
     return Color.HSVToColor(hsv)
 }
 
+/**
+* Convert color to darker shade
+*/
+fun Int.toDarkerColor(): Int {
+    val hsv = floatArrayOf(0f, 0f, 0f)
+    Color.colorToHSV(this, hsv)
+    hsv[2] *= 0.8f
+    return Color.HSVToColor(hsv)
+}
 
 private fun GradientDrawable.setCornerRadius(
     radius: Number,
@@ -148,8 +159,4 @@ fun Drawable.toBitmap(): Bitmap {
         draw(this)
     }
     return bitmap
-}
-
-private fun isDarkColor(color: Int): Boolean {
-    return ColorUtils.calculateLuminance(color) < 0.5
 }
