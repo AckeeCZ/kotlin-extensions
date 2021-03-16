@@ -26,13 +26,10 @@ dependencies {
     implementation 'com.squareup.picasso:picasso:2.71828'
 }
 
-ext {
-    bintrayName = 'picasso'
-    publishedArtifactId = 'picasso'
 
-    libraryName = 'Picasso Extensions'
-    libraryDescription = 'Helpful extensions for Picasso'
+ext {
+    PUBLISH_ARTIFACT_ID = 'extensions-picasso'
+    POM_DESCRIPTION = 'Kotlin extensions for Picasso library'
 }
 
-apply from: rootProject.file('gradle/bintray/install.gradle')
-apply from: rootProject.file('gradle/bintray/bintray.gradle')
+apply from: "${rootProject.projectDir}/gradle/mavencentral/publish.gradle"

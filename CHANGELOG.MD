@@ -1,5 +1,9 @@
 # Changelog
 
+## **1.5.0**
+- Migration from jCenter to Maven Central 🎉
+- ‼️ Important ‼️ groupId and artifactId has changed. New groupId is `io.github.ackeecz` and artifact ids now have a prefix `extensions`. See README.MD
+
 ## 1.4.1
 - Tweak luminance threshold in the ripple color formula for `backgroundDrawable`
 
