@@ -23,17 +23,13 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
 
 ext {
-    bintrayName = 'recyclerview'
-    publishedArtifactId = 'recyclerview'
-
-    libraryName = 'RecyclerView Extensions'
-    libraryDescription = 'Helpful extensions for Recyclerview, Item click support'
+    PUBLISH_ARTIFACT_ID = 'extensions-recyclerview'
+    POM_DESCRIPTION = 'Kotlin extensions for RecyclerView'
 }
 
-apply from: rootProject.file('gradle/bintray/install.gradle')
-apply from: rootProject.file('gradle/bintray/bintray.gradle')
+apply from: "${rootProject.projectDir}/gradle/mavencentral/publish.gradle"
