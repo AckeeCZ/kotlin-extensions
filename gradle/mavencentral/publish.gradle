@@ -85,7 +85,7 @@ publishing {
                 // Version control info - if you're using GitHub, follow the format as seen here
                 scm {
                     connection = libProperties['POM_SCM_CONNECTION']
-                    developerConnection =  libProperties['POM_SCM_DEVELOPER_CONNECTION']
+                    developerConnection = libProperties['POM_SCM_DEVELOPER_CONNECTION']
                     url = libProperties['POM_SCM_URL']
                 }
                 // A slightly hacky fix so that your POM will include any transitive dependencies
@@ -109,7 +109,7 @@ publishing {
             // This is an arbitrary name, you may also use "mavencentral" or
             // any other name that's descriptive for you
             name = "sonatype"
-            url =  libProperties['SONATYPE_URL']
+            url = libProperties['SONATYPE_URL']
             credentials {
                 username ossrhUsername
                 password ossrhPassword
@@ -123,8 +123,9 @@ signing {
 }
 
 nexusStaging {
-    packageGroup =  libProperties['GROUP']
+    packageGroup = libProperties['GROUP']
     stagingProfileId = sonatypeStagingProfileId
     username = ossrhUsername
     password = ossrhPassword
+    serverUrl = 'https://s01.oss.sonatype.org/service/local'
 }
