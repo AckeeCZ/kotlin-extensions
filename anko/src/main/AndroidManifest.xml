@@ -1,5 +1,5 @@
-<manifest package="cz.ackee.extensions.anko">
+<manifest package="io.github.ackeecz.extensions.anko">
 
-    <application/>
+    <application />
 
 </manifest>

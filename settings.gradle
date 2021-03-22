@@ -3,6 +3,4 @@ include ':android',
         ':epoxy',
         ':epoxy2',
         ':picasso',
-        ':rxjava2',
-        ':recyclerview',
-        ':viewmodel'
+        ':rxjava2'

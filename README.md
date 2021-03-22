@@ -10,7 +10,7 @@ All extensions are collected from projects that are based on Kotlin/Anko
 ## Structure
 Extensions are grouped to submodules that have the same dependency. So for example if extensions have dependency to RxJava they are in separate module.
 
-All modules has the same version. Current version is in `gradle.properties` file and can be seen in the badge above. 
+All modules has the same version. Current version is in `lib.properties` file and can be seen in the badge above.
 
 ### Android Extensions
 Extensions to core Android Framework and some Support Library classes like Fragment.
@@ -33,25 +33,11 @@ Extensions dependent on Picasso. Contains async loading of URL to ImageView
 compile "io.github.ackeecz:extensions-picasso:x.x.x"
 ```
 
-### Recyclerview Extensions
-Extensions to Recylerview with support for click/longclick listeners
-
-```
-compile "io.github.ackeecz:extensions-recyclerview:x.x.x"
-```
-
-### RX Extensions
+### RxJava2 Extensions
 Extensions to RxJava2 with easier subscribing/observing on particular threads and safe disposing of observables.
 
 ```
 compile "io.github.ackeecz:extensions-rxjava2:x.x.x"
-```
-
-### ViewModel Extensions
-Extensions to ViewModel stuff from Google's Architecture Components 
-
-```
-compile "io.github.ackeecz:extensions-viewmodel:x.x.x"
 ```
 
 ### Epoxy Extensions
@@ -70,7 +56,7 @@ compile "io.github.ackeecz:extensions-epoxy2:x.x.x"
 ```
 
 ## License
-Copyright 2018 Ackee, s.r.o.
+Copyright 2021 Ackee, s.r.o.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

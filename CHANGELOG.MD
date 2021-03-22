@@ -1,5 +1,12 @@
 # Changelog
 
+## **2.0.0**
+- ‼ Breaking changes ahead ‼
+- Change package name of a libraries. It follows the groupId defined in 1.5.0. New package name is `io.github.ackeecz.extensions.$libraryName`
+- Removed deprecated code
+- Removed recyclerview and viewmodel libraries because there are far better alternatives through androidx libraries.
+- Added more docs
+
 ## **1.5.0**
 - Migration from jCenter to Maven Central 🎉
 - ‼️ Important ‼️ groupId and artifactId has changed. New groupId is `io.github.ackeecz` and artifact ids now have a prefix `extensions`. See README.MD

@@ -1,5 +1,4 @@
-<manifest package="cz.ackee.extensions.rx">
+<manifest package="io.github.ackeecz.extensions.rxjava2">
 
-    <application/>
-
+    <application />
 </manifest>
