@@ -1,5 +1,4 @@
-<manifest package="cz.ackee.extensions.android"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="io.github.ackeecz.extensions.android">
 
-    <application/>
+    <application />
 </manifest>

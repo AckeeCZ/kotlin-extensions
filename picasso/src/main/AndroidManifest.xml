@@ -1,4 +1,4 @@
-<manifest package="cz.ackee.extensions.picasso">
+<manifest package="io.github.ackeecz.extensions.picasso">
 
-    <application/>
+    <application />
 </manifest>
