@@ -1,5 +1,8 @@
 # Changelog
 
+## **2.0.1**
+- Fix proguard rules in `anko` module which were not changed after package name changes in `2.0.0`
+
 ## **2.0.0**
 - ‼ Breaking changes ahead ‼
 - Change package name of a libraries. It follows the groupId defined in 1.5.0. New package name is `io.github.ackeecz.extensions.$libraryName`
