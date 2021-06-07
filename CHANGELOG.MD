@@ -1,5 +1,8 @@
 # Changelog
 
+## **2.0.2**
+- Add support for `unbind` in `EpoxyModelWithViewBinding`
+
 ## **2.0.1**
 - Fix proguard rules in `anko` module which were not changed after package name changes in `2.0.0`
 
