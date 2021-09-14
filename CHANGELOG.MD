@@ -1,5 +1,8 @@
 # Changelog
 
+## **2.0.3**
+- Update Epoxy dependency to 4.6.3
+
 ## **2.0.2**
 - Add support for `unbind` in `EpoxyModelWithViewBinding`
 
