@@ -1,5 +1,11 @@
 # Changelog
 
+## [3.1.0] - 2023-06-14
+### Changed
+- Upgrade dependencies (for AndroidX)
+- Remove Jetifier
+
+
 ## **2.0.3**
 - Update Epoxy dependency to 4.6.3
 
