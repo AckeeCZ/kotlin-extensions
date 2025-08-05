@@ -140,10 +140,15 @@ fun Context.openPlayStore(): Boolean {
     }
 }
 
+@Suppress("DEPRECATION")
 private fun Context.getDisplaySize(): Point {
-    val display = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
-    val size = Point()
-    display.getSize(size)
-
-    return size
+     return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+         val windowBounds = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).currentWindowMetrics.bounds
+         Point(windowBounds.width(), windowBounds.height())
+    } else {
+         val display = (getSystemService(Context.WINDOW_SERVICE) as WindowManager).defaultDisplay
+         val size = Point()
+         display.getSize(size)
+         size
+    }
 }
