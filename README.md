@@ -1,3 +1,8 @@
+# ⚠️ DEPRECATED ⚠️
+This library is in **maintenance mode**.  
+No new features will be added. Only critical bug fixes and security patches will be made.
+This library is deprecated in favor of [Ackeelities](https://github.com/AckeeCZ/ackeelities)
+
 [ ![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/extensions-android/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.ackeecz/extensions-android)
 
 # Android Kotlin Extensions
